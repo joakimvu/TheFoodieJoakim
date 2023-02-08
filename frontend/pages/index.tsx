@@ -4,13 +4,11 @@
 import Link from "next/link";
 import groq from "groq";
 import client from "../client";
-import Navigation from "@/components/navigation";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const Index = ({ posts }) => {
   return (
     <div>
-      <Navigation />
       <h1>Welcome to a blog!</h1>
       {/* {console.log(posts)} */}
       {posts.length > 0 &&
