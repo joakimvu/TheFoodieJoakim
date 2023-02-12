@@ -9,6 +9,7 @@ import protein from './protein'
 import cookingMethod from './cookingMethod'
 import mealType from './mealType'
 import season from './season'
+import ingredient from './ingredient'
 
 export const schemaTypes = [
   post,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   cookingMethod,
   mealType,
   season,
+  ingredient,
 ]
