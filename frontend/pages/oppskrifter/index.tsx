@@ -16,7 +16,8 @@ const Index = ({ recipe }) => {
   // Where you iterate over cookingSteps[number].text
   //   console.log(recipe[0].cookingSteps[1].children[0].text);
 
-  console.log(recipe);
+  console.log(recipe.ingredients);
+  // console.log(recipe?.ingredients[0].ingredientName);
   return (
     <main className="container mt-5" style={{ maxWidth: "768px" }}>
       <Image src={recipe?.imageUrl} style={{ width: "100%" }} />
@@ -28,9 +29,11 @@ const Index = ({ recipe }) => {
           <h4 className="text-end">{recipe?.cookingTime}</h4>
         </div>
       </div>
-      <p>Sist oppdatert: {recipe?.publishedAt}</p>
-      <h1>{recipe?.title}</h1>
-      <p>{recipe?.description}</p>
+      <div className="row">
+        <p>Sist oppdatert: {recipe?.publishedAt}</p>
+        <h1>{recipe?.title}</h1>
+        <p>{recipe?.description}</p>
+      </div>
     </main>
   );
 };
@@ -43,14 +46,19 @@ export async function getStaticProps() {
     "imageUrl": mainImage.asset->url,
     publishedAt,
     "description": description[0].children[0].text,
-  "country": country.Country->title,
-  "cookingTime": cookingTime.Time->cookingTime,
-  "protein": protein[]->title,
-  "cookingMethod": cookingMethod[]->cookingMethod,
-  "mealType": mealType[]->title,
-  "season": season[]->title,
-  "cookingSteps": cookingSteps[]
-}
+    "country": country.Country->title,
+    "cookingTime": cookingTime.Time->cookingTime,
+    "protein": protein[]->title,
+    "cookingMethod": cookingMethod[]->cookingMethod,
+    "mealType": mealType[]->title,
+    "season": season[]->title,
+    "cookingSteps": cookingSteps[],
+    "ingredients":   ingredients[] {
+      "ingredientName": ingredientName->title,
+      quantity,
+      "unitName": unit->title,
+    }
+  }
       `);
   return {
     props: {
