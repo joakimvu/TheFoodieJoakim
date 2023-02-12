@@ -50,6 +50,10 @@ export default defineType({
         },
       ],
     }),
+    // title: "layout",
+    // name: "layout",
+    // type: "reference",
+    // to: [{ type: "tag" }],
     defineField({
       name: 'cookingTime',
       title: 'Cooking Time',
@@ -93,8 +97,8 @@ export default defineType({
     //   of: [{type: 'reference', to: {type: 'category'}}],
     // }),
     defineField({
-      name: 'method',
-      title: 'Method',
+      name: 'cookingSteps',
+      title: 'CookingSteps',
       type: 'blockContent',
     }),
   ],
