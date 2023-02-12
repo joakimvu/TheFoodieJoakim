@@ -39,6 +39,40 @@ export default defineType({
       type: 'blockContent',
     }),
     defineField({
+      name: 'portion',
+      title: 'Portion',
+      type: 'number',
+    }),
+    defineField({
+      name: 'ingredients',
+      title: 'Ingredients',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'ingredientName',
+              title: 'Ingredient Name',
+              type: 'reference',
+              to: [{type: 'ingredient'}],
+            },
+            {
+              name: 'unit',
+              title: 'Unit',
+              type: 'reference',
+              to: [{type: 'unit'}],
+            },
+            {
+              name: 'quantity',
+              title: 'Quantity',
+              type: 'number',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'country',
       title: 'Country of origin',
       type: 'object',
@@ -106,7 +140,6 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
       media: 'mainImage',
     },
     prepare(selection) {
