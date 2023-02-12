@@ -9,6 +9,7 @@ export default defineType({
       name: 'cookingMethod',
       title: 'Cooking Method',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })
