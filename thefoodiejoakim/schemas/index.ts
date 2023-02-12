@@ -10,6 +10,7 @@ import cookingMethod from './cookingMethod'
 import mealType from './mealType'
 import season from './season'
 import ingredient from './ingredient'
+import unit from './unit'
 
 export const schemaTypes = [
   post,
@@ -24,4 +25,5 @@ export const schemaTypes = [
   mealType,
   season,
   ingredient,
+  unit,
 ]
