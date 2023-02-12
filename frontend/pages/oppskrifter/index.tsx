@@ -6,23 +6,16 @@ import client from "../../client";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const Index = ({ recipe }) => {
-  console.log(recipe[0]);
+  // How to get the cookingSteps style
+  // Where you iterate over cookingSteps[number]
+  console.log(recipe[0].cookingSteps[1].style);
+  // How to get the cookingSteps text
+  // Where you iterate over cookingSteps[number].text
+  console.log(recipe[0].cookingSteps[1].children[0].text);
 
   return (
     <div>
-      <h1>Welcome to a blog!</h1>
-      {/* {posts.length > 0 &&
-        posts.map(
-          ({ _id, title = "", slug = "", publishedAt = "" }) =>
-            slug && (
-              <li key={_id}>
-                <Link href={`/post/${encodeURIComponent(slug.current)}`}>
-                  {title}
-                </Link>{" "}
-                ({new Date(publishedAt).toDateString()})
-              </li>
-            )
-        )} */}
+      <h1>Welcome to a recipe!</h1>
     </div>
   );
 };
@@ -34,16 +27,16 @@ export async function getStaticProps() {
     slug,
     "imageUrl": mainImage.asset->url,
     publishedAt,
-    description,
-    "countryName": country->Country->title,
-    "cookingTime": cookingTime->Time->time,
-    "proteinName": protein[]->title,
-    "cookingMethodName": cookingMethod[]->title,
-    "mealTypeName": mealType[]->title,
-    "seasonName": season[]->title,
-    method
-  }
-    `);
+    "description": description[0].children[0].text,
+  "country": country.Country->title,
+  "cookingTime": cookingTime.Time->cookingTime,
+  "protein": protein[]->title,
+  "cookingMethod": cookingMethod[]->cookingMethod,
+  "mealType": mealType[]->title,
+  "season": season[]->title,
+  "cookingSteps": cookingSteps[]
+}
+      `);
   return {
     props: {
       recipe,
