@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import groq from "groq";
-import client from "../client";
+import client from "../services/client";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const Index = ({ posts }) => {
