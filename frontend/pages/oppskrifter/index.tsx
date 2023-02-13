@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import groq from "groq";
-import client from "../../client";
+import client from "../../services/client";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import Image from "react-bootstrap/Image";
 
-const Index = ({ recipe }) => {
+const Index = ({ recipe }: any) => {
   recipe = recipe[0];
   // How to get the cookingSteps style
   // Where you iterate over cookingSteps[number]
@@ -20,7 +20,11 @@ const Index = ({ recipe }) => {
   // console.log(recipe?.ingredients[0].ingredientName);
   return (
     <main className="container mt-5" style={{ maxWidth: "768px" }}>
-      <Image src={recipe?.imageUrl} style={{ width: "100%" }} />
+      <Image
+        src={recipe?.imageUrl}
+        alt={recipe?.title}
+        style={{ width: "100%" }}
+      />
       <div className="row">
         <div className="col-sm-6">
           <h4>{recipe?.country}</h4>
