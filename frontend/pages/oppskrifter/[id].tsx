@@ -14,7 +14,7 @@ const Recipe = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const [recipe, setRecipe] = useState(null);
+  const [recipe, setRecipe] = useState<any>(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -53,7 +53,11 @@ const Recipe = () => {
     <main className="container mt-5" style={{ maxWidth: "768px" }}>
       {recipe && recipe != undefined ? (
         <>
-          <Image src={recipe?.imageUrl} style={{ width: "100%" }} />
+          <Image
+            src={recipe?.imageUrl}
+            alt={recipe?.title}
+            style={{ width: "100%" }}
+          />
           <div className="row">
             <div className="col-sm-6">
               <h4>{recipe?.country}</h4>
@@ -74,34 +78,5 @@ const Recipe = () => {
     </main>
   );
 };
-
-// export async function getStaticProps() {
-//   const recipe = await client.fetch(groq`
-//   *[_type == "recipe"]{
-//     title,
-//     slug,
-//     "imageUrl": mainImage.asset->url,
-//     publishedAt,
-//     "description": description[0].children[0].text,
-//     "country": country.Country->title,
-//     "cookingTime": cookingTime.Time->cookingTime,
-//     "protein": protein[]->title,
-//     "cookingMethod": cookingMethod[]->cookingMethod,
-//     "mealType": mealType[]->title,
-//     "season": season[]->title,
-//     "cookingSteps": cookingSteps[],
-//     "ingredients":   ingredients[] {
-//       "ingredientName": ingredientName->title,
-//       quantity,
-//       "unitName": unit->title,
-//     }
-//   }
-//       `);
-//   return {
-//     props: {
-//       recipe,
-//     },
-//   };
-// }
 
 export default Recipe;
