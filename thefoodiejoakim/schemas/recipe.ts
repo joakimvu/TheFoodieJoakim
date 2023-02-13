@@ -69,6 +69,18 @@ export default defineType({
               type: 'number',
             },
           ],
+          preview: {
+            select: {
+              ingredientName: 'ingredientName.title',
+              unit: 'unit.title',
+              quantity: 'quantity',
+            },
+            prepare(selection: any) {
+              return {
+                title: `${selection.ingredientName} - ${selection.quantity} ${selection.unit}`,
+              }
+            },
+          },
         },
       ],
     }),
