@@ -9,6 +9,23 @@ import { useState, useEffect } from "react";
 import { getRecipe } from "../../services/getRecipe";
 
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
+import Form from "react-bootstrap/Form";
+import { type } from "os";
+
+type Step = {
+  _key: string;
+  _type: string;
+  children: {
+    _key: string;
+    _type: string;
+    marks: any[];
+    text: string;
+  }[];
+  markDefs: any[];
+  style: string;
+};
 
 const Recipe = () => {
   const router = useRouter();
@@ -60,16 +77,70 @@ const Recipe = () => {
           />
           <div className="row">
             <div className="col-sm-6">
-              <h4>{recipe?.country}</h4>
+              <h6>{recipe?.country}</h6>
             </div>
             <div className="col-sm-6">
-              <h4 className="text-end">{recipe?.cookingTime}</h4>
+              <h6 className="text-end">{recipe?.cookingTime}</h6>
             </div>
           </div>
           <div className="row">
-            <p>Sist oppdatert: {recipe?.publishedAt}</p>
             <h1>{recipe?.title}</h1>
+
+            <p>
+              Sist oppdatert:{" "}
+              {recipe?.publishedAt
+                ? new Date(recipe.publishedAt).toLocaleDateString("no-NO", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  })
+                : ""}
+            </p>
+
             <p>{recipe?.description}</p>
+
+            {/* Antall porsjoner */}
+            <div>
+              <p>Antall porsjoner</p>
+              <InputGroup className="mb-3" style={{ width: "10rem" }}>
+                <Button variant="primary">-</Button>
+                <Form.Control
+                  aria-label="Example text with two button addons"
+                  // TODO: change this to dynamic value
+                  value="40"
+                  style={{ textAlign: "center" }}
+                />
+                <Button variant="primary">+</Button>
+              </InputGroup>
+            </div>
+
+            {/* Ingredienser */}
+            <div>
+              <h3>Ingredienser</h3>
+              <ul className="list-unstyled">
+                {recipe?.ingredients?.map((ingredient: any, index: number) => (
+                  <li key={index}>
+                    <div className="row">
+                      <div className="col-sm-1">
+                        <p className="d-inline">{ingredient.quantity}</p>
+                        <p className="d-inline">{ingredient.unitName}</p>
+                      </div>
+                      <div className="col-sm-8">
+                        <p className="d-inline">{ingredient.ingredientName}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Fremgangsmåte */}
+            <div>
+              <h3>Fremgansmåte</h3>
+              {recipe?.cookingSteps?.map((step: Step, index: number) => (
+                <p key={index}>{JSON.stringify(step)}</p>
+              ))}
+            </div>
           </div>
         </>
       ) : (
