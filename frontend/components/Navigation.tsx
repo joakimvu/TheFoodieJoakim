@@ -11,7 +11,7 @@ export default function Navigation() {
       bg="dark"
       variant="dark"
     >
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         {/* <Logo
           alt=""
           width="30"
@@ -25,7 +25,7 @@ export default function Navigation() {
         <Nav className="ms-auto">
           <Nav.Link href="/">Hjem</Nav.Link>
           <Nav.Link href="/oppskrifter">Oppskrifter</Nav.Link>
-          <Nav.Link href="/ingredienser">Ingredienser</Nav.Link>
+          {/* <Nav.Link href="/ingredienser">Ingredienser</Nav.Link> */}
           <Nav.Link href="/omoss">Om Oss</Nav.Link>
         </Nav>
       </Navbar.Collapse>
