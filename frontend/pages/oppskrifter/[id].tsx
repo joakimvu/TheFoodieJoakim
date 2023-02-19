@@ -67,15 +67,18 @@ const Recipe = () => {
   //   console.log(recipe.ingredients);
   // console.log(recipe?.ingredients[0].ingredientName);
   return (
-    <main className="container mt-5" style={{ maxWidth: "768px" }}>
+    <main
+      className="container-fluid mx-auto mt-5"
+      style={{ maxWidth: "767px" }}
+    >
       {recipe && recipe != undefined ? (
         <>
           <Image
             src={recipe?.imageUrl}
             alt={recipe?.title}
-            style={{ width: "100%" }}
+            style={{ width: "100%", maxHeight: "400px", objectFit: "cover" }}
           />
-          <div className="row">
+          <div className="row mt-2">
             <div className="col-sm-6">
               <h6>{recipe?.country}</h6>
             </div>
@@ -85,7 +88,6 @@ const Recipe = () => {
           </div>
           <div className="row">
             <h1>{recipe?.title}</h1>
-
             <p>
               Sist oppdatert:{" "}
               {recipe?.publishedAt
@@ -96,12 +98,14 @@ const Recipe = () => {
                   })
                 : ""}
             </p>
-
             <p>{recipe?.description}</p>
-
+            {/* TODO: change portion to dynamic value */}
             {/* Antall porsjoner */}
             <div>
-              <p>Antall porsjoner</p>
+              <p>
+                Antall porsjoner{" "}
+                <span className="text-danger">(funksjon under arbeid)</span>
+              </p>
               <InputGroup className="mb-3" style={{ width: "10rem" }}>
                 <Button variant="primary">-</Button>
                 <Form.Control
@@ -113,10 +117,9 @@ const Recipe = () => {
                 <Button variant="primary">+</Button>
               </InputGroup>
             </div>
-
             {/* Ingredienser */}
             <div>
-              <h3>Ingredienser</h3>
+              <h2>Ingredienser</h2>
               <ul className="list-unstyled">
                 {recipe?.ingredients?.map((ingredient: any, index: number) => (
                   <li key={index}>
@@ -133,13 +136,14 @@ const Recipe = () => {
                 ))}
               </ul>
             </div>
-
             {/* Fremgangsmåte */}
             <div>
-              <h3>Fremgansmåte</h3>
-              {recipe?.cookingSteps?.map((step: Step, index: number) => (
-                <p key={index}>{JSON.stringify(step)}</p>
-              ))}
+              <h2>Fremgansmåte</h2>
+              {recipe?.cookingSteps?.map((step: Step, index: number) => {
+                console.log(step?.children[0]);
+                const Tag: any = step?.style === "normal" ? "p" : step?.style;
+                return <Tag key={index}>{step?.children[0]?.text}</Tag>;
+              })}
             </div>
           </div>
         </>
