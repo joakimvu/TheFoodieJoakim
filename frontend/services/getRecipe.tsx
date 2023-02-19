@@ -4,7 +4,7 @@ import groq from "groq";
 export const getRecipe = async (id: String) => {
   const pid = "mandu";
   const data = await client.fetch(groq`
-    *[_type == "recipe" && slug.current == "${id}"] | order(publishedAt desc){
+    *[_type == "recipe" && slug.current == "${id}"] {
       title,
       slug,
       "imageUrl": mainImage.asset->url,
