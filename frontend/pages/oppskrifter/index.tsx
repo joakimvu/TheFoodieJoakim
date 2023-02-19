@@ -20,6 +20,7 @@ const Index = ({ recipes }: any) => {
   console.log(recipes);
   return (
     <main className="container mt-5" style={{ maxWidth: "768px" }}>
+      <p className="text-danger"></p>
       <FilterRecipes />
       {recipes?.map((recipe, index): any => (
         <Card key={index} className="shadow p-3 mb-5 bg-white rounded">
@@ -62,7 +63,7 @@ const Index = ({ recipes }: any) => {
 
 export async function getStaticProps() {
   const recipes = await client.fetch(groq`
-    *[_type == "recipe"]{
+    *[_type == "recipe"] | order(publishedAt desc){
       title,
       slug,
       "imageUrl": mainImage.asset->url,
