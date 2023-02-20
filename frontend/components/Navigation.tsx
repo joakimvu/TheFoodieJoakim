@@ -26,7 +26,8 @@ export default function Navigation() {
           <Nav.Link href="/">Hjem</Nav.Link>
           <Nav.Link href="/oppskrifter">Oppskrifter</Nav.Link>
           {/* <Nav.Link href="/ingredienser">Ingredienser</Nav.Link> */}
-          <Nav.Link href="/omoss">Om Oss</Nav.Link>
+          {/* <Nav.Link href="/ingredienser">Mitt kjøkkenutstyr</Nav.Link> */}
+          <Nav.Link href="/omoss">Om Meg</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
