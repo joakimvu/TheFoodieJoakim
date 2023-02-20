@@ -5,7 +5,6 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import Card from "react-bootstrap/Card";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
 
 function CustomToggle({
   children,
@@ -21,6 +20,7 @@ function CustomToggle({
 
   return (
     <ToggleButton
+      className="mb-3"
       id="toggle-check"
       type="checkbox"
       variant="primary"
