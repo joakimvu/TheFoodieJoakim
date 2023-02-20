@@ -25,7 +25,7 @@ const Index = ({ recipes }: any) => {
       <Searchbar />
       <FilterRecipes />
       {recipes?.map((recipe, index): any => (
-        <Card key={index} className="shadow p-3 mb-5 bg-white rounded">
+        <Card key={index} className="shadow p-3 mb-3 bg-white rounded">
           <Link
             href={`/oppskrifter/${recipe.slug.current}`}
             style={{ color: "inherit", textDecoration: "none" }}
