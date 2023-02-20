@@ -1,6 +1,5 @@
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Navigation() {
   return (
