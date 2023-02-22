@@ -69,7 +69,7 @@ const Recipe = () => {
   return (
     <main
       className="container-fluid mx-auto mt-5"
-      style={{ maxWidth: "767px" }}
+      style={{ maxWidth: "768px" }}
     >
       {recipe && recipe != undefined ? (
         <>
