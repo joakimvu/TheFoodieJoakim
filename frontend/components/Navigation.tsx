@@ -4,7 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 export default function Navigation() {
   return (
     <Navbar
-      className="px-4 py-2 "
+      className="px-4 py-2 fixed-top"
       collapseOnSelect
       expand="lg"
       bg="light"
