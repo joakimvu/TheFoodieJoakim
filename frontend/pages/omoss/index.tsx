@@ -3,11 +3,8 @@ import profilePic from "../../public/test.jpg";
 
 export default function index() {
   return (
-    <main
-      className="ms-auto p-4"
-      style={{ maxWidth: "600px", margin: "0 auto" }}
-    >
-      <Image src={profilePic} alt="Picture of something" width={600} />
+    <main className="mx-auto" style={{ maxWidth: "768px" }}>
+      <Image src={profilePic} alt="Picture of something" width={768} />
       <h1>Joakim’s Matblogg</h1>
       <p>
         Dette er en personlig matblogg ment for mitt eget bruk og for å utforske
