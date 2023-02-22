@@ -2,7 +2,7 @@ export default function SortingRecipe() {
   return (
     <select
       className="form-select"
-      style={{ width: "200px" }}
+      style={{ width: "200px", height: "40px" }}
       aria-label="Default select example"
     >
       <option selected>Sorter</option>
