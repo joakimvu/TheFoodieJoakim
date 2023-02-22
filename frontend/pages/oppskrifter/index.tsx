@@ -9,6 +9,7 @@ import Image from "react-bootstrap/Image";
 import FilterRecipes from "@/components/FilterRecipes";
 import { Card } from "react-bootstrap";
 import Searchbar from "@/components/Searchbar";
+import SortingRecipe from "@/components/SortingRecipe";
 
 const Index = ({ recipes }: any) => {
   // How to get the cookingSteps style
@@ -23,7 +24,11 @@ const Index = ({ recipes }: any) => {
     <main className="container mt-5" style={{ maxWidth: "768px" }}>
       <p className="text-danger"></p>
       <Searchbar />
-      <FilterRecipes />
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <FilterRecipes />
+        <SortingRecipe />
+      </div>
+
       {recipes?.map((recipe, index): any => (
         <Card key={index} className="shadow p-3 mb-3 bg-white rounded">
           <Link
