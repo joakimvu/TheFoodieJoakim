@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Image } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 
 const Index = () => {
   return (
@@ -82,12 +82,15 @@ const Index = () => {
               }}
             />
           </div>
-          <div className="col-6 p-2">
+          <div className="col-6 p-2 position-relative">
             <h4>Oppskrifter</h4>
             <p>
               Usikker på hva du vil spise? La deg inspireres av mine deilige
               ideér.
             </p>
+            <div className="position-absolute bottom-0 start-0">
+              <Button>Se Oppskrifter</Button>
+            </div>
           </div>
         </div>
         {/* Ingredienser  */}
@@ -105,9 +108,12 @@ const Index = () => {
               }}
             />
           </div>
-          <div className="col-6 p-2">
+          <div className="col-6 p-2 position-relative">
             <h4>Ingredienser</h4>
             <p>Oppdag eksotiske ingredienser du ikke visste eksisterte!</p>
+            <div className="position-absolute bottom-0 start-0">
+              <Button>Les om ingredienser</Button>
+            </div>
           </div>
         </div>
         {/* Mitt Utstyr  */}
@@ -125,12 +131,15 @@ const Index = () => {
               }}
             />
           </div>
-          <div className="col-6 p-2">
+          <div className="col-6 p-2 position-relative">
             <h4>Mitt kjøkkenutstyr</h4>
             <p>
               Nysgjerrig på utstyret som driver mine kulinariske eventyr? Ta en
               titt inne på mitt kjøkken!
             </p>
+            <div className="position-absolute bottom-0 start-0">
+              <Button>Se mitt kjøkkenutstyr</Button>
+            </div>
           </div>
         </div>
       </div>
