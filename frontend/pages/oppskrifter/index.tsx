@@ -21,7 +21,10 @@ const Index = ({ recipes }: any) => {
 
   console.log(recipes);
   return (
-    <main className="container mt-5" style={{ maxWidth: "768px" }}>
+    <main
+      className="container"
+      style={{ maxWidth: "768px", marginTop: "64px" }}
+    >
       <p className="text-danger"></p>
       <Searchbar />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
