@@ -24,8 +24,8 @@ export default function Navigation() {
         <Nav className="ms-auto ">
           <Nav.Link href="/">Hjem</Nav.Link>
           <Nav.Link href="/oppskrifter">Oppskrifter</Nav.Link>
-          {/* <Nav.Link href="/ingredienser">Ingredienser</Nav.Link> */}
-          {/* <Nav.Link href="/ingredienser">Mitt kjøkkenutstyr</Nav.Link> */}
+          <Nav.Link href="/ingredienser">Ingredienser</Nav.Link>
+          <Nav.Link href="/kjokkenutstyr">Mitt Kjøkkenutstyr</Nav.Link>
           <Nav.Link href="/omoss">Om Meg</Nav.Link>
         </Nav>
       </Navbar.Collapse>

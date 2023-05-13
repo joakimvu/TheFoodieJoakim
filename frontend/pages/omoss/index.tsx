@@ -1,11 +1,12 @@
 import Image from "next/image";
 import profilePic from "../../public/test.jpg";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 export default function index() {
   return (
-    <main className="mx-auto" style={{ maxWidth: "768px" }}>
+    <main className="mx-auto" style={{ maxWidth: "768px", marginTop: "64px" }}>
       <Image src={profilePic} alt="Picture of something" width={768} />
-      <h1>Joakim’s Matblogg</h1>
+      <h1 className="py-2">Joakim’s Matblogg</h1>
       <p>
         Dette er en personlig matblogg ment for mitt eget bruk og for å utforske
         min egen reise innen matlaging. Gjennom å skrive ned mine oppskrifter og

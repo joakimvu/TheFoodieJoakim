@@ -35,7 +35,7 @@ const Recipe = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  console.log(recipe);
+  // console.log(recipe);
 
   // Trigges henting av data når komponenten blir laget
   useEffect(() => {
@@ -140,7 +140,7 @@ const Recipe = () => {
             <div>
               <h2>Fremgansmåte</h2>
               {recipe?.cookingSteps?.map((step: Step, index: number) => {
-                console.log(step?.children[0]);
+                // console.log(step?.children[0]);
                 const Tag: any = step?.style === "normal" ? "p" : step?.style;
                 return <Tag key={index}>{step?.children[0]?.text}</Tag>;
               })}

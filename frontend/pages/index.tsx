@@ -89,7 +89,9 @@ const Index = () => {
               ideér.
             </p>
             <div className="position-absolute bottom-0 start-0">
-              <Button>Se Oppskrifter</Button>
+              <Link href="/oppskrifter">
+                <Button>Se Oppskrifter</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -112,7 +114,9 @@ const Index = () => {
             <h4>Ingredienser</h4>
             <p>Oppdag eksotiske ingredienser du ikke visste eksisterte!</p>
             <div className="position-absolute bottom-0 start-0">
-              <Button>Les om ingredienser</Button>
+              <Link href="/ingredienser">
+                <Button>Les om ingredienser</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -138,7 +142,9 @@ const Index = () => {
               titt inne på mitt kjøkken!
             </p>
             <div className="position-absolute bottom-0 start-0">
-              <Button>Se mitt kjøkkenutstyr</Button>
+              <Link href="kjokkenutstyr">
+                <Button>Se mitt kjøkkenutstyr</Button>
+              </Link>
             </div>
           </div>
         </div>

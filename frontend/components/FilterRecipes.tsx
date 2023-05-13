@@ -53,7 +53,7 @@ export default function FilterRecipes() {
       <CustomToggle eventKey="1">Filter</CustomToggle>
       <Accordion.Collapse eventKey="1">
         {/* Filters */}
-        <Card>
+        <Card className="w-100">
           {" "}
           <Card.Body>
             {/* Land */}
@@ -110,7 +110,7 @@ export default function FilterRecipes() {
             <ul className="list-inline list-unstyled">
               <li>
                 <input type="checkbox" name="okse" />
-                <span className="mx-2">okse</span>
+                <span className="mx-2">Okse</span>
               </li>
               <li>
                 <input type="checkbox" name="svin" />
